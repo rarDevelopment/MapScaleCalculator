@@ -6,9 +6,12 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>7f4f945c-f22d-4be9-862f-e32dd30c0798</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Fortnite-API-Wrapper" Version="2.3.2" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="6.0.1" />
     <PackageReference Include="SkiaSharp" Version="3.116.1" />
   </ItemGroup>
 
