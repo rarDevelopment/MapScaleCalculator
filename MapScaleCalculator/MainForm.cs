@@ -31,10 +31,10 @@ public partial class MainForm : Form
     //      to where the image is and scale for how much the image is shrunk or grown. (Honestly, I never tested what happens if you have a smaller image than your screen)
     public MainForm()
     {
-        InitializeMapData();
+        InitializeMap();
     }
 
-    private async void InitializeMapData()
+    private async void InitializeMap()
     {
         ConfigureSecrets();
         var fortniteApi = InitializeFortniteApi();
@@ -46,6 +46,11 @@ public partial class MainForm : Form
 
         InitializeComponent();
 
+        InitializePictureBox(markData);
+    }
+
+    private void InitializePictureBox(string markData)
+    {
         pbMap.Image = _image;
         pbMap.SizeMode = PictureBoxSizeMode.Zoom;
 
@@ -55,7 +60,6 @@ public partial class MainForm : Form
         _bottomRightHandle = (Point)_image.Size;
 
         (_scale, _offsets) = CalculateScaleAndOffset(_marks!, new PointF(0, 0), (PointF)(SizeF)_mapSize);
-
     }
 
     private async Task InitializeMapImage(MapV1 mapData)
